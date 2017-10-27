@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: aa21b0cdfb299ae4d9012ecb01ac53bc
+timeCreated: 1508776775
+licenseType: Free
+ShaderImporter:
+  defaultTextures:
+  - _CloudSpite: {fileID: 2800000, guid: 6a72d4f23d5a5a74593bc05557482117, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -120,7 +120,6 @@ public class Weapon : MonoBehaviour
     }
     #endregion
 
-
     public bool Fire()
     {
         if (CanFire)
@@ -157,7 +156,28 @@ public class Weapon : MonoBehaviour
 
     private void MaintainBeam()
     {
-        throw new NotImplementedException();
+        //ray for stopping the beam early
+        Ray r = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        
+        if(Physics.Raycast(r, out hit, speed))
+        {
+            DrawBeam(shot, r, hit);
+        }
+        else
+        {
+            DrawBeam(shot, r, hit);
+        }
+    }
+
+    private void DrawBeam(GameObject shot, Ray r, RaycastHit hit)
+    {
+        shot.GetComponent<BeamRenderer>().Draw(r.origin, hit.point);
+    }
+
+    private void DrawBeam(GameObject shot, Ray r, float distance)
+    {
+        shot.GetComponent<BeamRenderer>().Draw(r.origin, r.GetPoint(distance));
     }
 
     private void LaunchShot()
